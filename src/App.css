@@ -1,38 +1,192 @@
-.App {
+@import url('https://fonts.googleapis.com/css2?family=Akaya+Kanadaka&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Squada+One&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+}
+
+nav {
+  /* width: 100vh; */
+  background-color: rgb(56, 216, 128);
+  padding: 20px;
+  border: 1px solid;
+  padding: 20px;
+  box-shadow: 5px 10px 15px #888888;
+}
+nav > h1 {
   text-align: center;
+  font-size: 3.2rem;
+  color: rgb(255, 255, 255);
+  font-family: 'Bree Serif', serif;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  /* align-items: center; */
+  flex: 1;
+  flex-wrap: wrap;
+  margin-top: 5rem;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.container > input {
+  /* margin-top: 5rem; */
+  width: 40rem;
+  align-self: center;
+  /* flex: 1; */
+  height: 3rem;
+  /* padding: 10px 30px; */
+  border-radius: 20px;
+  font-size: 30px;
+  outline: none;
+  border: 2px solid;
+  padding: 10px 30px;
+  box-shadow: 5px 10px 18px #888888;
+  font-family: 'Akaya Kanadaka', cursive;
 }
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.container > button {
+  /* flex: 1; */
+  background-color: rgb(56, 216, 128);
+  border: none;
+  margin-left: 1rem;
+  width: 8rem;
+  height: 4.5rem;
+  border-radius: 1rem;
+  font-size: 2.7rem;
+  padding: 10px;
+  outline: none;
+  border: 2px solid black;
+  padding: 10px;
+  box-shadow: 5px 10px 18px #888888;
+  color: white;
+  font-family: 'Squada One', cursive;
+}
+
+.container > button:hover {
+  background-color: rgb(21, 139, 74);
+}
+
+.card-container {
+  margin: 5rem 10rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  flex-wrap: wrap;
+  gap: 5rem;
+}
+
+.card {
+  height: 22rem;
+  /* flex: 1 1 20%; */
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+  flex-wrap: wrap;
+  align-self: flex-start;
+  /* flex: 1; */
+  /* width: 10rem; */
+  box-shadow: 5px 10px 18px #888888;
+  border: 1px solid black;
+  width: 18rem;
+
+  /* justify-content: center; */
+  /* align-items: center; */
+  border-radius: 1rem;
+  /* overflow: auto; */
+}
+
+.card > h1 {
+  font-family: 'Bree Serif', serif;
+  background-color: rgb(56, 216, 128);
+  text-align: center;
+  border-top-left-radius: 1rem;
+  border-top-right-radius: 1rem;
+  font-size: 2.5rem;
+  padding: 0.6rem;
+  color: white;
+  /* flex: 1; */
+}
+
+.card > p {
+  flex: 2 2 200px;
+  font-size: 2rem;
+  padding: 1rem;
+  overflow: auto;
+  height: 20rem;
+}
+
+.card > .delete-button {
+  border: none;
+  font-size: 1.5rem;
+  border-bottom-right-radius: 1rem;
+  border-bottom-left-radius: 1rem;
+  background-color: rgb(24, 24, 24);
+  outline: none;
+  padding: 0.5rem;
+  font-family: 'Squada One', cursive;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.card > .delete-button:hover {
+  background-color: rgb(129, 128, 128);
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.card > .complete-button {
+  border: none;
+  font-size: 1.5rem;
+  background-color: rgb(56, 216, 128);
+  outline: none;
+  padding: 0.5rem;
+  color: white;
+  font-family: 'Squada One', cursive;
+}
+
+.card > .complete-button:hover {
+  background-color: rgb(21, 139, 74);
+}
+
+.card > p {
+  flex: 2;
+  font-family: 'Akaya Kanadaka', cursive;
+}
+
+.error > h2 {
+  color: black;
+  text-align: center;
+  font-size: 2rem;
+  margin-top: 1rem;
+  border: 1px solid red;
+  background-color: rgb(255, 86, 86);
+}
+
+i .icon {
+  top: 2rem;
+}
+
+@media only screen and (max-width: 800px) {
+  .container {
+    margin-top: 3rem;
   }
-  to {
-    transform: rotate(360deg);
+  .container > input {
+    width: 15rem;
+  }
+  .container > button {
+    margin-top: 1rem;
+  }
+
+  .card-container {
+    justify-content: flex-start;
+  }
+
+  .card {
+    height: auto;
+    width: 18rem;
+  }
+
+  .card-container {
+    margin: 4rem 2rem;
   }
 }

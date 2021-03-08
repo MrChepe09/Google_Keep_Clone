@@ -1,23 +1,30 @@
-import logo from './logo.svg';
 import './App.css';
+import { useState } from 'react';
+import Card from './components/Card';
+import InputBox from './components/InputBox';
+import Navbar from './components/Navbar';
+import ErrorBox from './components/ErrorBox';
+
 
 function App() {
+  const [todos, setTodos] = useState([]);
+  const [value, setValue ] = useState('');
+  const [error, setError] = useState(false);
+
+  // useEffect(() => {
+  //  localStorage.setItem('todos', JSON.stringify(todos));
+  // }, [todos])
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Navbar />
+      {error ? <ErrorBox /> : undefined}
+      <div className='container'>
+        <InputBox value={value} changeValue={setValue} list={todos} updateList={setTodos} setError={setError} />
+      </div>
+      
+      <div className='card-container'>
+        {todos.map((todo) => <Card key={todo.id} id={todo.id} data={todo.todo} list={todos} setList={setTodos} />)}
+      </div>
     </div>
   );
 }
